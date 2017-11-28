@@ -1,0 +1,9 @@
+<% current_user.reservations.each do |i| %>
+	<% listing = Listing.find(i.listing_id)%>
+	<%= link_to listing.name, listing_path(i.listing_id)%>
+	<h3> starts at </h3>
+	<%= i.start_time %>
+	<h3> ends at </h3>
+	<%= i.end_time %>
+
+<%end%>

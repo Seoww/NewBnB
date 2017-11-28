@@ -1,0 +1,8 @@
+<%= image_tag @this_listing.pictures[0].to_s%>
+	<h1> <%= @this_listing.name %> </h1>
+<% this_user= User.find(@this_listing.user_id) %>
+<h3> <%= this_user.name %> </h3>
+<h3> <%= @this_listing.description%> </h3>
+<h3> <%= @full_address%> </h3>
+
+ <%= render partial: '/reservations/form'%>

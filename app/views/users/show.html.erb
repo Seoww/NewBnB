@@ -1,0 +1,8 @@
+<% if @user.id == current_user.id %>
+	<h1>Hi! I'm <%= @user.name %> </h1>
+	<%= image_tag @user.avatar.to_s, class:"profile-pic"%>
+	<br>
+	<%= link_to "edit your profile",edit_user_path%>
+<% else %>
+	<h1> Hi! I'm <%= @user.name %> </h1>
+<% end %>

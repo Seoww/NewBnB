@@ -1,0 +1,42 @@
+<%=form_for @listing do |f|%>
+	<%= f.label "name your BnB place"%>
+	<%= f.text_field :name %>
+	<br>
+	<%= f.label "choose your property type"%>
+	<%= f.select :property_type, ["House", "Entire Floor", "Condominium", "Villa", "Townhouse", "Castle", "Treehouse", "Igloo", "Yurt", "Cave", "Chalet", "Hut", "Tent", "Other"] %>
+	<br>
+	<%= f.label "number of rooms"%>
+	<%= f.select :room_number, ["1 room", "2 rooms", "3 rooms", "4 rooms"  ] %>
+	<br>
+	<%= f.label "number of guest allowed"%>
+	<%= f.select :guest_number, ["1 guest", "2 guests", "3 guests", "4 guests", "5 guests", "6 guests", "7 guests", "8 guests"] %>
+	<br>
+	<%= f.label "number of beds "%>
+	<%= f.select :bed_number, ["1 bed", "2 beds","3 beds","4 beds","5 beds","6 beds","7 beds","8 beds"] %>
+	<h3> Address of your place </h3>
+	<%= f.label "Country"%>
+	<%= f.text_field :country %>
+	<br>
+	<%= f.label "state"%>
+	<%= f.text_field :state %>
+	<br>
+	<%= f.label "city"%>
+	<%= f.text_field :city %>
+	<br>
+	<%= f.label "zipcode"%>
+	<%= f.text_field :zipcode %>
+	<br>
+	<%= f.label "address"%>
+	<%= f.text_field :address %>
+	<br>
+	<%= f.label "price per night"%>
+	<%= f.text_field :price %>
+	<br>
+	<br>
+	<%= f.label "description"%>
+	<%= f.text_field :description %>
+	<br>
+	<%= f.label "add pictures of your place"%>
+	<%= f.file_field :pictures, multiple: true%>
+	<%= f.submit%>
+<% end %>

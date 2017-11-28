@@ -6,9 +6,36 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+	<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => "reload" %>
+	<%= javascript_include_tag "application", "data-turbolinks-track" => "reload" %>
   </head>
 
   <body>
+  	<nav class="navbar navbar-custom">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="#">NewBnB</a>
+	    </div>
+	    <ul class="nav navbar-nav">
+	      <li class="active"><a href="/">Home</a></li>
+	    </ul>
+	    <ul class="nav navbar-nav navbar-right">
+	      <li><%= link_to "Become a Host", new_listing_path, class:"host-button"  %></li>
+	      <% if signed_in? %>
+	      <li><%=link_to "My Reservations", user_reservations_path(current_user.id), class:"reservation"%></li>
+
+	      <li><%= link_to "profile", user_path(current_user.id), class:"profile" %></li>
+	      <li><%=link_to "Logout", sign_out_path, class:"signout"%> </li>
+
+	      <% else %>
+
+	      <li><%= link_to "Sign Up", sign_up_path, class:"signup" %></li>
+	      <li><%= link_to "Login", sign_in_path, class:"signin"%> </li>
+
+	      <% end %>
+	    </ul>
+	  </div>
+	</nav>
     <%= yield %>
   </body>
 </html>
