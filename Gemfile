@@ -39,7 +39,7 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 gem 'will_paginate', '~> 3.1.0'
 gem 'carrierwave', '~> 1.0'
 gem "mini_magick"
-
+gem "braintree"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
