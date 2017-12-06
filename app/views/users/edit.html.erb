@@ -1,0 +1,12 @@
+<h1> HI IM IN </h1>
+
+<%= form_for @user do |f| %>
+	<h1> email </h1>
+	<%= f.text_field :email%>
+	<h1> name </h1>
+	<%= f.text_field :name%>
+	<br>
+	<%= f.label :avatar%>
+	<%= f.file_field :avatar%>
+	<%= f.submit%>
+<%end%>

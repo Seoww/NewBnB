@@ -1,0 +1,30 @@
+
+<div class="container">
+	<div class="row">
+		<% @listing.each do |i| %>
+			<div class="col-md-4">
+				<div class="box">
+					<h1> <%= link_to "#{i.name}", listing_path(i.id)%> </h1> 		
+					<% if i.pictures.any?%>
+						<%= image_tag i.pictures[0], class:"listing-picture"%>
+					<% end %>
+					<br>
+					<%=  i.property_type %>
+					<br>
+					<%=  i.country + "," + i.state + "," + i.city + "," + i.zipcode + "," + i.address%>
+					<br>
+					<%=  i.price + " per night" %>
+					<br>
+					<%=  i.description %>
+					<br>
+					<% posted_user = User.find(i.user.id)%>
+					<%= link_to "#{posted_user.name}", user_path(posted_user.id)%>
+				</div>
+			</div>
+		<% end %>
+	</div>
+</div>
+
+<div class="paginate">
+	<%= will_paginate @listing%>
+</div>
