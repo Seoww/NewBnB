@@ -24,8 +24,8 @@
 	      <% if signed_in? %>
 	      <li><%=link_to "My Reservations", user_reservations_path(current_user.id), class:"reservation"%></li>
 
-	      <li><%= link_to "profile", user_path(current_user.id), class:"profile" %></li>
-	      <li><%=link_to "Logout", sign_out_path, class:"signout"%> </li>
+	      <li> <%= link_to "profile", user_path(current_user.id), class:"profile" %></li>
+	      <li> <%= link_to "Logout", sign_out_path, method: :delete, class:"signout"%> </li>
 
 	      <% else %>
 
