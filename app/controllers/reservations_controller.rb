@@ -8,7 +8,7 @@ class ReservationsController < ApplicationController
 	def create 
 		reservation = current_user.reservations.new(reservation_params)
 		if reservation.save
-			redirect_to user_reservations_path(current_user.id)
+			redirect_to braintree_new_path
 		else 
 			render listing_path
 		end 
